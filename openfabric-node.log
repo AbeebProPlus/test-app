@@ -1,0 +1,258 @@
+21-06-2023 18:12:37.785 [main] INFO  m.p.s.DotenvPropertySource.addToEnvironment - Initializing Dotenv with DotenvConfig{directory=null, filename=null, ignoreIfMalformed=false, ignoreIfMissing=true, systemProperties=false, prefix=null}
+21-06-2023 18:12:37.841 [main] INFO  ai.openfabric.api.Application.logStarting - Starting Application using Java 1.8.0_382 on mac8ver with PID 12748 (C:\Users\USER\Downloads\ecommerce\openfabric-test\openfabric-api\build\classes\java\main started by USER in C:\Users\USER\Downloads\ecommerce\openfabric-test)
+21-06-2023 18:12:37.844 [main] INFO  ai.openfabric.api.Application.logStartupProfileInfo - The following 2 profiles are active: "base", "local"
+21-06-2023 18:12:39.515 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+21-06-2023 18:12:39.611 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interfaces.
+21-06-2023 18:12:40.900 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+21-06-2023 18:12:40.912 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+21-06-2023 18:12:40.914 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+21-06-2023 18:12:40.915 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.68]
+21-06-2023 18:12:41.085 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+21-06-2023 18:12:41.086 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3125 ms
+21-06-2023 18:12:41.319 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+21-06-2023 18:12:42.496 [main] ERROR com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:659)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:280)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at ai.openfabric.api.Application.main(Application.java:13)
+21-06-2023 18:12:42.509 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+21-06-2023 18:12:42.519 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+21-06-2023 18:12:42.574 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+21-06-2023 18:12:42.657 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at ai.openfabric.api.Application.main(Application.java:13)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:659)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:280)
+	... 20 common frames omitted
+21-06-2023 18:14:49.524 [main] INFO  m.p.s.DotenvPropertySource.addToEnvironment - Initializing Dotenv with DotenvConfig{directory=null, filename=null, ignoreIfMalformed=false, ignoreIfMissing=true, systemProperties=false, prefix=null}
+21-06-2023 18:14:49.841 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+io.github.cdimascio.dotenv.DotenvException: Malformed entry //9c231a1c61a5fe322dd1
+	at io.github.cdimascio.dotenv.internal.DotenvParser.parse(DotenvParser.java:53)
+	at io.github.cdimascio.dotenv.DotenvBuilder.load(DotenvBuilder.java:77)
+	at me.paulschwarz.springdotenv.DotenvPropertyLoader.<init>(DotenvPropertyLoader.java:19)
+	at me.paulschwarz.springdotenv.DotenvPropertySource.<init>(DotenvPropertySource.java:22)
+	at me.paulschwarz.springdotenv.DotenvPropertySource.<init>(DotenvPropertySource.java:26)
+	at me.paulschwarz.springdotenv.DotenvPropertySource.addToEnvironment(DotenvPropertySource.java:59)
+	at me.paulschwarz.springdotenv.DotenvApplicationInitializer.initialize(DotenvApplicationInitializer.java:15)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:607)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:373)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at ai.openfabric.api.Application.main(Application.java:13)
+21-06-2023 18:15:09.657 [main] INFO  m.p.s.DotenvPropertySource.addToEnvironment - Initializing Dotenv with DotenvConfig{directory=null, filename=null, ignoreIfMalformed=false, ignoreIfMissing=true, systemProperties=false, prefix=null}
+21-06-2023 18:15:09.714 [main] INFO  ai.openfabric.api.Application.logStarting - Starting Application using Java 1.8.0_382 on mac8ver with PID 7196 (C:\Users\USER\Downloads\ecommerce\openfabric-test\openfabric-api\build\classes\java\main started by USER in C:\Users\USER\Downloads\ecommerce\openfabric-test)
+21-06-2023 18:15:09.717 [main] INFO  ai.openfabric.api.Application.logStartupProfileInfo - The following 2 profiles are active: "base", "local"
+21-06-2023 18:15:11.965 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+21-06-2023 18:15:12.111 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 118 ms. Found 1 JPA repository interfaces.
+21-06-2023 18:15:13.764 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+21-06-2023 18:15:13.783 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+21-06-2023 18:15:13.786 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+21-06-2023 18:15:13.787 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.68]
+21-06-2023 18:15:14.027 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+21-06-2023 18:15:14.028 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 4167 ms
+21-06-2023 18:15:14.359 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+21-06-2023 18:15:15.566 [main] ERROR com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException - HikariPool-1 - Exception during pool initialization.
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:659)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:280)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at ai.openfabric.api.Application.main(Application.java:13)
+21-06-2023 18:15:15.582 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+21-06-2023 18:15:15.595 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+21-06-2023 18:15:15.651 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+21-06-2023 18:15:15.767 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at ai.openfabric.api.Application.main(Application.java:13)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:285)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "openfabric"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:659)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247)
+	at org.postgresql.Driver.makeConnection(Driver.java:434)
+	at org.postgresql.Driver.connect(Driver.java:291)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:280)
+	... 20 common frames omitted
+21-06-2023 18:15:59.139 [main] INFO  m.p.s.DotenvPropertySource.addToEnvironment - Initializing Dotenv with DotenvConfig{directory=null, filename=null, ignoreIfMalformed=false, ignoreIfMissing=true, systemProperties=false, prefix=null}
+21-06-2023 18:15:59.189 [main] INFO  ai.openfabric.api.Application.logStarting - Starting Application using Java 1.8.0_382 on mac8ver with PID 12332 (C:\Users\USER\Downloads\ecommerce\openfabric-test\openfabric-api\build\classes\java\main started by USER in C:\Users\USER\Downloads\ecommerce\openfabric-test)
+21-06-2023 18:15:59.192 [main] INFO  ai.openfabric.api.Application.logStartupProfileInfo - The following 2 profiles are active: "base", "local"
+21-06-2023 18:16:01.865 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+21-06-2023 18:16:02.041 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 151 ms. Found 1 JPA repository interfaces.
+21-06-2023 18:16:04.507 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+21-06-2023 18:16:04.553 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+21-06-2023 18:16:04.554 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+21-06-2023 18:16:04.554 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.68]
+21-06-2023 18:16:04.779 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+21-06-2023 18:16:04.781 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 5493 ms
+21-06-2023 18:16:05.116 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+21-06-2023 18:16:05.397 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+21-06-2023 18:16:05.804 [main] INFO  liquibase.database.log - Set default schema name to public
+21-06-2023 18:16:06.050 [main] INFO  liquibase.lockservice.log - Successfully acquired change log lock
+21-06-2023 18:16:07.133 [main] INFO  liquibase.changelog.log - Creating database history table with name: public.databasechangelog
+21-06-2023 18:16:07.153 [main] INFO  liquibase.changelog.log - Reading from public.databasechangelog
+21-06-2023 18:16:07.329 [main] INFO  liquibase.changelog.log - Custom SQL executed
+21-06-2023 18:16:07.331 [main] INFO  liquibase.changelog.log - ChangeSet db/changelog/table-schema.xml::EXTENSION::andrei ran successfully in 62ms
+21-06-2023 18:16:07.345 [main] INFO  liquibase.changelog.log - Custom SQL executed
+21-06-2023 18:16:07.346 [main] INFO  liquibase.changelog.log - ChangeSet db/changelog/table-schema.xml::SEQUENCE::andrei ran successfully in 6ms
+21-06-2023 18:16:07.368 [main] INFO  liquibase.changelog.log - Table worker created
+21-06-2023 18:16:07.371 [main] INFO  liquibase.changelog.log - ChangeSet db/changelog/table-schema.xml::WO_01::andrei ran successfully in 20ms
+21-06-2023 18:16:07.379 [main] INFO  liquibase.lockservice.log - Successfully released change log lock
+21-06-2023 18:16:07.790 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+21-06-2023 18:16:08.007 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.12.Final
+21-06-2023 18:16:08.799 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+21-06-2023 18:16:09.186 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+21-06-2023 18:16:10.636 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+21-06-2023 18:16:10.661 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+21-06-2023 18:16:10.715 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+21-06-2023 18:16:17.734 [main] INFO  com.yahoo.elide.Elide.registerCustomSerde - Registering serde for type : class java.time.Instant
+21-06-2023 18:16:17.735 [main] INFO  com.yahoo.elide.Elide.registerCustomSerde - Registering serde for type : class java.time.OffsetDateTime
+21-06-2023 18:16:18.220 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 21818103-dd64-423a-9a83-3f096828af3d
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+21-06-2023 18:16:18.713 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35230c31, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a34356bc, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ef462c0, org.springframework.security.web.header.HeaderWriterFilter@7007606a, org.springframework.web.filter.CorsFilter@9f1b177d, org.springframework.security.web.authentication.logout.LogoutFilter@be3c716f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@90b8766a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@28d55f02, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@395585ee, org.springframework.security.web.session.SessionManagementFilter@bfb63c6b, org.springframework.security.web.access.ExceptionTranslationFilter@d513970a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@82aaa960]
+21-06-2023 18:16:19.638 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration.checkTemplateLocationExists - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+21-06-2023 18:16:19.742 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+21-06-2023 18:16:19.763 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+21-06-2023 18:16:19.969 [main] INFO  ai.openfabric.api.Application.logStarted - Started Application in 21.397 seconds (JVM running for 22.397)
+21-06-2023 18:33:28.224 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+21-06-2023 18:33:28.234 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+21-06-2023 18:33:28.273 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 38 ms
+21-06-2023 18:33:48.638 [http-nio-8080-exec-3] WARN  o.s.web.servlet.PageNotFound.noHandlerFound - No mapping for GET /favicon.ico
