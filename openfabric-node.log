@@ -256,3 +256,5 @@ This generated password is for development use only. Your security configuration
 21-06-2023 18:33:28.234 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 21-06-2023 18:33:28.273 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 38 ms
 21-06-2023 18:33:48.638 [http-nio-8080-exec-3] WARN  o.s.web.servlet.PageNotFound.noHandlerFound - No mapping for GET /favicon.ico
+22-06-2023 07:21:07.679 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h40m34s780ms937µs900ns).
+22-06-2023 12:45:25.050 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool.run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m16s618ms404µs800ns).
