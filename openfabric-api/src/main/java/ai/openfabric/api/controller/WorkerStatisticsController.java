@@ -27,7 +27,7 @@ public class WorkerStatisticsController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PutMapping("/worker_statistics")
+    @PutMapping("/worker_statistics_update")
     public  ResponseEntity<ApiResponse> updateWorkerStatistics(@RequestBody WorkerStatisticsRequest workerStatisticsRequest,
                                                                HttpServletRequest httpServletRequest){
         ApiResponse response = ApiResponse.builder()
