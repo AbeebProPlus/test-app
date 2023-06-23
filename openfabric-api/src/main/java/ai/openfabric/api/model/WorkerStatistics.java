@@ -20,9 +20,9 @@ public class WorkerStatistics {
     @JoinColumn(name = "worker_id")
     private Worker worker;
     @Column(nullable = false)
-    private Double memoryUsage;
-    @Column(nullable = false)
     private Double cpuUsage;
+    @Column(nullable = false)
+    private Double memoryUsage;
     @Column(nullable = false)
     private LocalDateTime timestamp;
 }
