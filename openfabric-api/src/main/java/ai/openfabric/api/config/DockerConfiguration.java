@@ -31,9 +31,9 @@ public class DockerConfiguration {
                 .withDockerHost("tcp://localhost:8080")
                 .withDockerTlsVerify(true)
                 .withDockerCertPath("/home/position")
+                .withRegistryEmail(email)
                 .withRegistryUsername(username)
                 .withRegistryPassword(password)
-                .withRegistryEmail(email)
                 .withRegistryUrl(url)
                 .build();
         DockerHttpClient clientConfig = new ApacheDockerHttpClient.Builder()
