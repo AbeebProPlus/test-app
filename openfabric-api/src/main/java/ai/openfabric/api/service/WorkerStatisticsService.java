@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface WorkerStatisticsService {
     String updateWorkerStatistics(WorkerStatisticsRequest workerStatisticsRequest);
-    List<WorkerStatistics> getWorkerStatistics(String workerName);
+    List<WorkerStatistics> findWorkerStatistics(String workerName);
 }

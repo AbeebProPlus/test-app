@@ -16,7 +16,7 @@ public class WorkerStatistics {
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "of-uuid")
     @GenericGenerator(name = "of-uuid", strategy = "ai.openfabric.api.model.IDGenerator")
     public String id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "worker_id")
     private Worker worker;
     @Column(nullable = false)
