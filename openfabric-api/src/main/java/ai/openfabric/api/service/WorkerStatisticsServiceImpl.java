@@ -33,7 +33,7 @@ public class WorkerStatisticsServiceImpl implements WorkerStatisticsService{
                     .timestamp(LocalDateTime.now())
                     .build();
             workerStatisticsRepository.save(workerStatistics);
-        return "Worker statistics updated sucessfully";
+        return "Worker statistics updated successfully";
     }
 
     @Override
