@@ -1,36 +1,28 @@
 package ai.openfabric.api.model;
 
-
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity()
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
-public class Worker extends Datable implements Serializable {
-
+public class WorkerStatistics {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "of-uuid")
     @GenericGenerator(name = "of-uuid", strategy = "ai.openfabric.api.model.IDGenerator")
-    @Getter
-    @Setter
     public String id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "worker_id")
+    private Worker worker;
     @Column(nullable = false)
-    public String name;
+    private Double memoryUsage;
     @Column(nullable = false)
-    private int port;
+    private Double cpuUsage;
     @Column(nullable = false)
-    private int status;
-    private int ipAddress;
-    @Enumerated(value = EnumType.STRING)
-    private Status workerStatus;
-
-    public Worker(String name, int port, Status status) {
-        this.name = name;
-        this.port = port;
-        this.workerStatus = status;
-    }
+    private LocalDateTime timestamp;
 }
